@@ -6,9 +6,9 @@ fn main() {
 
 #[test]
 fn test() {
-    let test_input = include_str!("day1_test.txt");
-    assert_eq!(solve_part1(test_input), 24000);
-    assert_eq!(solve_part2(test_input), 45000);
+    let input = include_str!("day1_test.txt");
+    assert_eq!(solve_part1(input), 24000);
+    assert_eq!(solve_part2(input), 45000);
 }
 
 fn solve_part1(input: &str) -> i32 {
