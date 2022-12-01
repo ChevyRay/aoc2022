@@ -14,26 +14,16 @@ fn test() {
 fn solve_part1(input: &str) -> i32 {
     input
         .split("\n\n")
-        .map(|items| {
-            items
-                .lines()
-                .map(|calories| calories.parse::<i32>().unwrap())
-                .sum::<i32>()
-        })
+        .map(|elf| elf.lines().map(|cals| cals.parse::<i32>().unwrap()).sum())
         .max()
         .unwrap_or(0)
 }
 
 fn solve_part2(input: &str) -> i32 {
-    let mut max_for_each: Vec<i32> = input
+    let mut totals: Vec<i32> = input
         .split("\n\n")
-        .map(|items| {
-            items
-                .lines()
-                .map(|item| item.parse::<i32>().unwrap())
-                .sum::<i32>()
-        })
+        .map(|elf| elf.lines().map(|cals| cals.parse::<i32>().unwrap()).sum())
         .collect();
-    max_for_each.sort();
-    max_for_each.iter().rev().take(3).sum::<i32>()
+    totals.sort();
+    totals.iter().rev().take(3).sum()
 }
