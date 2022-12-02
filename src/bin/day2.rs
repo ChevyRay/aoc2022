@@ -1,5 +1,3 @@
-use std::time::Instant;
-
 fn main() {
     let input = include_str!("day2.txt");
     println!("PART 1: {}", solve_part1(input));
