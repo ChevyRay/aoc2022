@@ -1,3 +1,5 @@
+use std::time::Instant;
+
 fn main() {
     let input = include_str!("day2.txt");
     println!("PART 1: {}", solve_part1(input));
@@ -55,7 +57,7 @@ fn solve_part1_alt(input: &str) -> i32 {
     input
         .lines()
         .map(str::as_bytes)
-        .map(|line| (((line[0] - b'A') << 2) | (line[2] - b'X')) as usize)
+        .map(|line| (line[0] - b'A' << 2 | line[2] - b'X') as usize)
         .map(|i| [4, 8, 3, 0, 1, 5, 9, 0, 7, 2, 6][i])
         .sum()
 }
@@ -64,7 +66,7 @@ fn solve_part2_alt(input: &str) -> i32 {
     input
         .lines()
         .map(str::as_bytes)
-        .map(|line| (((line[0] - b'A') << 2) | (line[2] - b'X')) as usize)
+        .map(|line| (line[0] - b'A' << 2 | line[2] - b'X') as usize)
         .map(|i| [3, 4, 8, 0, 1, 5, 9, 0, 2, 6, 7][i])
         .sum()
 }
